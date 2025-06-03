@@ -1,5 +1,5 @@
 paths:
-  /notes:
+  /api/notes:
     get:
       summary: Get all notes
       tags:
@@ -53,7 +53,7 @@ paths:
         "500":
           description: Internal server error
 
-  /notes/{id}:
+  /api/notes/{id}:
     get:
       summary: Get a note by ID
       tags:
@@ -144,7 +144,7 @@ paths:
         "500":
           description: Internal server error
 
-  /notes/search:
+  /api/notes/search:
     get:
       summary: Search notes by term
       tags:
