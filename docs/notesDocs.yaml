@@ -37,6 +37,19 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Note"
+        "400":
+          description: Bad request (e.g., invalid input)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  details:
+                    type: object
+                    description: Field-specific error messages
         "500":
           description: Internal server error
 
@@ -92,6 +105,19 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Note"
+        "400":
+          description: Bad request (e.g., invalid input)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  details:
+                    type: object
+                    description: Field-specific error messages
         "404":
           description: Note not found
         "500":

@@ -47,6 +47,17 @@ paths:
                     description: ID of the new user profile
         "400":
           description: Bad request (e.g., missing fields)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  details:
+                    type: object
+                    description: Field-specific error messages
         "409":
           description: Conflict (e.g., user already exists)
         "500":
@@ -95,5 +106,16 @@ paths:
                     description: ID of the logged-in user profile
         "400":
           description: Bad request (e.g., missing fields, invalid credentials)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message
+                  details:
+                    type: object
+                    description: Field-specific error messages
         "500":
           description: Internal server error
