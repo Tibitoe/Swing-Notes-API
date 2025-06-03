@@ -1,0 +1,33 @@
+{
+  "name": "swing-notes-api",
+  "version": "1.0.0",
+  "description": "Individuell inlämningsuppgift examination backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tibitoe/Swing-Notes-API.git"
+  },
+  "keywords": [],
+  "author": "Tobias Engvall",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Tibitoe/Swing-Notes-API/issues"
+  },
+  "homepage": "https://github.com/Tibitoe/Swing-Notes-API#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "js-yaml": "^4.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.25.49"
+  }
+}
