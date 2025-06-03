@@ -54,7 +54,7 @@ The Swing Notes API is a RESTful API built with Node.js, Express, and PostgreSQL
 4.  **Set up the database:**
 
     - Ensure you have PostgreSQL installed and running.
-    - Create a database with the name specified in your `DATABASE_URL`.
+    - Create a database with the name specified in your `POSTGRES_URL`.
     - Run the following command to create the necessary tables:
 
     ```bash
