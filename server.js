@@ -2,6 +2,9 @@ import express from "express";
 import dotenv from "dotenv";
 import swaggerUi from "swagger-ui-express";
 import cors from "cors";
+import ApiRouter from "./routes/ApiRouter.js";
+import AuthRouter from "./routes/AuthRouter.js";
+import { swaggerDocs } from "./config/swagger.js";
 
 dotenv.config();
 
@@ -15,8 +18,11 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
+app.use("/api", ApiRouter);
+app.use("/auth", AuthRouter);
+
 if (process.env.NODE_ENV !== "production") {
-  app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+  app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 }
 
 app.get("/", (req, res) => {
@@ -29,5 +35,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });

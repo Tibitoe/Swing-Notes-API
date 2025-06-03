@@ -18,6 +18,7 @@ const authenticate = async (req, res, next) => {
     }
 
     req.profile = profile;
+    req.profile.id = profile.id;
     next();
   } catch (err) {
     res.status(400).json({ msg: "Token is not valid" });

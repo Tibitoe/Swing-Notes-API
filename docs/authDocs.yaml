@@ -1,0 +1,99 @@
+paths:
+  /register:
+    post:
+      summary: Register a new user
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: User's username
+                email:
+                  type: string
+                  format: email
+                  description: User's email address
+                password:
+                  type: string
+                  description: User's password
+              required:
+                - username
+                - email
+                - password
+      responses:
+        "201":
+          description: Successful registration
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: JWT token for the new user
+                  username:
+                    type: string
+                    description: Username of the new user
+                  email:
+                    type: string
+                    description: Email of the new user
+                  profileId:
+                    type: integer
+                    description: ID of the new user profile
+        "400":
+          description: Bad request (e.g., missing fields)
+        "409":
+          description: Conflict (e.g., user already exists)
+        "500":
+          description: Internal server error
+
+  /login:
+    post:
+      summary: Login an existing user
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: User's username
+                password:
+                  type: string
+                  description: User's password
+              required:
+                - username
+                - password
+      responses:
+        "200":
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: JWT token for the logged-in user
+                  username:
+                    type: string
+                    description: Username of the logged-in user
+                  email:
+                    type: string
+                    description: Email of the logged-in user
+                  profileId:
+                    type: integer
+                    description: ID of the logged-in user profile
+        "400":
+          description: Bad request (e.g., missing fields, invalid credentials)
+        "500":
+          description: Internal server error

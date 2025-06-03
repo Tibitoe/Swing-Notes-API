@@ -38,6 +38,7 @@ export const createTables = async () => {
         text TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        profile_id INTEGER REFERENCES profile(id) ON DELETE CASCADE
       );
     `);
 
