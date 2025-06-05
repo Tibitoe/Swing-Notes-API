@@ -65,7 +65,7 @@ const Notes = {
       `
         SELECT *
         FROM note
-        WHERE (title LIKE $1 OR text LIKE $1) AND profile_id = $2
+        WHERE (title ILIKE $1 OR text ILIKE $1) AND profile_id = $2
     `,
       [`%${searchTerm}%`, profileId]
     );
